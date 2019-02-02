@@ -1,0 +1,47 @@
+@import '../../util/variables';
+
+.form-container {
+    padding: 20px 10px;
+    form {
+        text-align: center;
+        align-items: center;
+        margin: 0px auto;
+        width: 268px;
+        img {
+            width: 15%;
+        }
+        h1 {
+            font-size: 32px;
+            letter-spacing: -1.2px;
+            margin-bottom: 0;
+        }
+        h4 {
+            font-size: 16px;
+            margin-top: 0;
+            font-weight: normal;
+        }
+        .visibility-hidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+        input {
+            @include input();
+            padding-left: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .signup-btn {
+            @include signupBtn();
+            letter-spacing: -.4px;
+        }
+        .login-btn {
+            @include loginBtn();
+            letter-spacing: -.4px;
+        }
+    }
+}

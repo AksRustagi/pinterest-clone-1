@@ -1,0 +1,58 @@
+$primary: #e60023;
+
+$rare: #FFF;
+$mediumRare: #EFEFEF;
+$mediumWell: #808080;
+$well: #484848;
+$burnt: #211922;
+
+@mixin input {
+    border-radius: 4px;
+    vertical-align: middle;
+    outline: none;
+    border: 1px solid $mediumWell;
+    width: 100%;
+    height: 36px;
+    font-size: 16px;
+    letter-spacing: -.4px;
+}
+
+@mixin signupBtn {
+    border: 0px;
+    height: 36px;
+    display: inline-block;
+    border-radius: 4px;
+    -webkit-font-smoothing: antialiased;
+    padding: 0px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    margin-top: 10px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgb(230, 0, 35);
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+@mixin loginBtn {
+    border: 0px;
+    height: 36px;
+    display: inline-block;
+    border-radius: 4px;
+    -webkit-font-smoothing: antialiased;
+    padding: 0px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    margin-top: 10px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: $mediumRare;
+    color: $burnt;
+    width: 100%;
+}

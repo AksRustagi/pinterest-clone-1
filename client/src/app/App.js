@@ -5,10 +5,10 @@ import Landing from '../components/LandingPage/Landing.js';
 import Login from '../components/Login/Login.js';
 import SignUp from '../components/SignUp/SignUp.js';
 import Home from '../components/Home/Home.js';
-
-// import * as firebaseui from 'firebaseui'
-
 import './App.css';
+
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
 
 class App extends Component {
   render() {
