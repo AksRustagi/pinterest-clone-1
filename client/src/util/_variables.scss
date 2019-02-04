@@ -1,8 +1,9 @@
-$primary: #e60023;
+$primary: #E60023;
+$primaryAccent: #D20020;
 
 $rare: #FFF;
 $mediumRare: #EFEFEF;
-$mediumWell: #808080;
+$mediumWell: #D3D3D3;
 $well: #484848;
 $burnt: #211922;
 
@@ -11,13 +12,13 @@ $burnt: #211922;
     vertical-align: middle;
     outline: none;
     border: 1px solid $mediumWell;
-    width: 100%;
+    width: 95%;
     height: 36px;
     font-size: 16px;
     letter-spacing: -.4px;
 }
 
-@mixin signupBtn {
+@mixin formBtn {
     border: 0px;
     height: 36px;
     display: inline-block;
@@ -32,27 +33,6 @@ $burnt: #211922;
     margin-top: 10px;
     vertical-align: middle;
     text-align: center;
-    background-color: rgb(230, 0, 35);
-    color: rgb(255, 255, 255);
-    width: 100%;
-}
-
-@mixin loginBtn {
-    border: 0px;
-    height: 36px;
-    display: inline-block;
-    border-radius: 4px;
-    -webkit-font-smoothing: antialiased;
-    padding: 0px 18px;
-    font-size: 16px;
-    font-weight: bold;
-    outline: none;
-    box-shadow: none;
-    cursor: pointer;
-    margin-top: 10px;
-    vertical-align: middle;
-    text-align: center;
-    background-color: $mediumRare;
-    color: $burnt;
+    letter-spacing: -.4px;
     width: 100%;
 }

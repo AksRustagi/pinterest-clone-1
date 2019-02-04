@@ -36,12 +36,30 @@
             margin-bottom: 1rem;
         }
         .signup-btn {
-            @include signupBtn();
-            letter-spacing: -.4px;
+            @include formBtn();
+            background-color: rgb(230, 0, 35);
+            color: rgb(255, 255, 255);
+            &:hover {
+                background-color: $primaryAccent;
+            }
         }
         .login-btn {
-            @include loginBtn();
-            letter-spacing: -.4px;
+            @include formBtn();
+            background-color: $mediumRare;
+            color: $burnt;
+            &:hover {
+                background-color: $mediumWell;
+            }
+        }
+        .github-btn {
+            @include formBtn();
+            background-color: black;
+            color: $rare;
+            img {
+                width: 12%;
+                vertical-align: middle;
+                padding-right: 0.5rem;
+            }
         }
     }
 }

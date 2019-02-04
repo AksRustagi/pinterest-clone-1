@@ -42,8 +42,8 @@
   border-radius: 4px;
   vertical-align: middle;
   outline: none;
-  border: 1px solid #808080;
-  width: 100%;
+  border: 1px solid #D3D3D3;
+  width: 95%;
   height: 36px;
   font-size: 16px;
   letter-spacing: -.4px;
@@ -67,10 +67,14 @@
   margin-top: 10px;
   vertical-align: middle;
   text-align: center;
+  letter-spacing: -.4px;
+  width: 100%;
   background-color: #e60023;
   color: white;
-  width: 100%;
-  letter-spacing: -.4px;
+}
+
+.form-container form .signup-btn:hover {
+  background-color: #D20020;
 }
 
 .form-container form .login-btn {
@@ -89,9 +93,41 @@
   margin-top: 10px;
   vertical-align: middle;
   text-align: center;
+  letter-spacing: -.4px;
+  width: 100%;
   background-color: #EFEFEF;
   color: #211922;
-  width: 100%;
+}
+
+.form-container form .login-btn:hover {
+  background-color: #D3D3D3;
+}
+
+.form-container form .github-btn {
+  border: 0px;
+  height: 36px;
+  display: inline-block;
+  border-radius: 4px;
+  -webkit-font-smoothing: antialiased;
+  padding: 0px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+  margin-top: 10px;
+  vertical-align: middle;
+  text-align: center;
   letter-spacing: -.4px;
+  width: 100%;
+  background-color: black;
+  color: #FFF;
+}
+
+.form-container form .github-btn img {
+  width: 12%;
+  vertical-align: middle;
+  padding-right: 0.5rem;
 }
 /*# sourceMappingURL=signup.css.map */
