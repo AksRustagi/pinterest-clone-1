@@ -1,1 +1,37 @@
-@import '../util/variables';
+@import '../../util/variables';
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 1.5rem;
+    height: 3rem;
+    border-bottom: thin 1px $mediumRare;
+    img {
+        vertical-align: middle;
+        width: 2.5rem;
+    }
+    .search-container {
+        display: flex;
+        width: 50%;
+        input {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: $mediumRare;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: none;
+            box-sizing: border-box;
+            color: #333;
+            font-size: 16px;
+            font-weight: 600;
+            height: 2.5rem;
+            line-height: 20px;
+            outline: none;
+            padding: 0 40px 0 52px;
+            width: 100%;
+        }
+    }
+}

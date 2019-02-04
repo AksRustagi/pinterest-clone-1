@@ -1,15 +1,24 @@
-import React, { Component } from 'react';
-import SearchBar from './SearchBar.js';
+import React from 'react';
 import PinLogo from '../../assets/pinterest.svg';
+import './header.scss';
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div>
+
+
+const SearchBar = ({ keyword, handleChange }) => (
+
+    <div className='header-container'>
         <img src={PinLogo} alt='pinterest logo' />
-        <SearchBar handleChange={this.handleChange} handleSearch={this.handleSearch} />
+        <div className='search-container'>
+            <input
+                type='search'
+                name='keyword'
+                placeholder='Search'
+                value={keyword}
+                onChange={(e) => handleChange(e)}
+            />
+        </div>
+    </div>
+);
 
-      </div>
-    )
-  }
-}
+export default SearchBar;
+

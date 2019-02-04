@@ -6,11 +6,10 @@ import Header from '../Header/Header.js';
 import './landing.scss';
 
 
-
 const unsplash = new Unsplash({
-  applicationId: "{APP_ACCESS_KEY}",
-  secret: "{APP_SECRET}",
-  callbackUrl: "{CALLBACK_URL}"
+  applicationId: process.env.REACT_APP_UNSPLASH_ACCESS,
+  secret: process.env.REACT_APP_UNSPLASH_SECRET,
+  // callbackUrl: "{CALLBACK_URL}"
 });
 
 export default class Landing extends Component {
@@ -19,11 +18,15 @@ export default class Landing extends Component {
     super(props)
     this.handleChange = this.handleChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.keyDown = this.keyDown.bind(this);
+
 
 
     this.state = {
       data: [],
       isOpen: true,
+      keyword: '',
+      searched: false,
     }
   }
 
@@ -31,11 +34,22 @@ export default class Landing extends Component {
     fetch(url.unsplashUrl)
       .then(resp => resp.json())
       .then(images => {
+        console.log(images)
         this.setState({
           data: images,
         })
       })
       .catch(error => console.log(error))
+  }
+
+  componentDidUpdate() {
+    const { keyword, searched } = this.state;
+
+    if ((keyword.length === 0) & searched) {
+      this.setState({
+        searched: false
+      });
+    }
   }
 
   closeModal = () => {
@@ -69,9 +83,9 @@ export default class Landing extends Component {
 
   render() {
     return (
-      <div className='landing'>
+      <div keyDown={(e) => this.keyDown(e)}>
         <SignUp handleClose={this.closeModal} Open={this.state.isOpen} />
-        <Header />
+        <Header handleChange={this.handleChange} handleSearch={this.handleSearch}/>
       </div>
     )
   }

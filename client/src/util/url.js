@@ -1,5 +1,5 @@
 const url = {
-    unsplashUrl:'https://api.unsplash.com/',
+    unsplashUrl:(`https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_UNSPLASH_ACCESS}`),
     
 }
 
