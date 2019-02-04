@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SignUp from '../SignUp/SignUp.js';
 import url from '../../util/url.js'
 import Unsplash from 'unsplash-js';
+import Header from '../Header/Header.js';
 import './landing.scss';
 
 
@@ -16,8 +17,10 @@ export default class Landing extends Component {
 
   constructor(props) {
     super(props)
-    
-    
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+
+
     this.state = {
       data: [],
       isOpen: true,
@@ -32,7 +35,7 @@ export default class Landing extends Component {
           data: images,
         })
       })
-    .catch(error => console.log(error))
+      .catch(error => console.log(error))
   }
 
   closeModal = () => {
@@ -41,10 +44,34 @@ export default class Landing extends Component {
     });
   };
 
+   // tracks input for search bar
+   handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  // changes state in searched - when searched
+  handleSearch = (e) => {
+    e.preventDefault();
+    this.setState({
+      searched: true
+    });
+  }
+
+  // listener for enter key
+  keyDown = (e) => {
+    if (e.keyCode === 13) {
+      this.handleSearch();
+    }
+  };
+
   render() {
     return (
       <div className='landing'>
-        <SignUp handleClose={this.closeModal} Open={this.state.isOpen}/>
+        <SignUp handleClose={this.closeModal} Open={this.state.isOpen} />
+        <Header />
       </div>
     )
   }
