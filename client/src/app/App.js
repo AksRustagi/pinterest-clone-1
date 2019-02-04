@@ -5,14 +5,71 @@ import Landing from '../components/LandingPage/Landing.js';
 import Login from '../components/Login/Login.js';
 import SignUp from '../components/SignUp/SignUp.js';
 import Home from '../components/Home/Home.js';
-import { base } from '../components/FireBase/Base.js';
-
+import { Spinner } from '@blueprintjs/core';
+import { app } from '../components/FireBase/Base.js';
 import './App.css';
 
 var firebase = require('firebase');
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.setCurrentUser = this.setCurrentUser.bind(this);
+
+
+    this.state = {
+      authenticated: false,
+      currentUser: null,
+      loading: true,
+    }
+  }
+
+  setCurrentUser(user) {
+    if (user) {
+      this.setState({
+        currentUser: user,
+        authenticated: true
+      })
+    } else {
+      this.setState({
+        currentUser: null,
+        authenticated: false
+      })
+    }
+  }
+
+  componentWillMount() {
+    this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authenticated: true,
+          currentUser: user,
+          loading: false,
+        })
+      } else {
+        this.setState({
+          authenticated: false,
+          currentUser: null,
+          loading: false,
+        })
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    this.removeAuthListener();
+  }
+
   render() {
+    // if (this.state.loading === true) {
+    //   return (
+    //     <div className='loader'>
+    //       <h3>Loading...</h3>
+    //       <Spinner />
+    //     </div>
+    //   )
+    // }
     return (
       <Router>
         <div className="App">
