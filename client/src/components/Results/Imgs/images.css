@@ -1,9 +1,35 @@
 .img-wrap {
   list-style-type: none;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .img-wrap img {
   border-radius: 8px;
-  margin: 0.5rem 0.5rem;
+}
+
+.img-wrap__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 1rem 1rem;
+}
+
+.img-wrap__footer .img-profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+  margin-right: 15px;
+  float: left;
+}
+
+.img-wrap__footer a {
+  color: #484848;
+  -webkit-text-decoration-color: #484848;
+          text-decoration-color: #484848;
 }
 /*# sourceMappingURL=images.css.map */

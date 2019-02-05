@@ -1,8 +1,27 @@
+@import '../../../util/variables';
+
 .img-wrap {
     list-style-type: none;
+    margin: 0 1rem 1rem 1rem;
     img {
         border-radius: 8px;
-        margin: 0.5rem 0.5rem;
-
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 1rem;
+        .img-profile {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #d8d8d8;
+            margin-right: 15px;
+            float: left;
+        }
+        a {
+            color: $well;
+            text-decoration-color: $well;
+        }
     }
 }

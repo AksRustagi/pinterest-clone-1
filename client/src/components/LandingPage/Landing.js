@@ -4,7 +4,7 @@ import axios from 'axios';
 import SignUp from '../SignUp/SignUp.js';
 import url from '../../util/url.js'
 import Unsplash from 'unsplash-js';
-import SearchBar from '../Header/SearchBar.js';
+import SearchBar from '../Search/SearchBar.js';
 import Results from '../Results/Results.js';
 import './landing.scss';
 
@@ -18,8 +18,7 @@ export default class Landing extends Component {
 
   constructor(props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this);
-    this.keyDown = this.keyDown.bind(this);
+    this.keyUp = this.keyUp.bind(this);
 
 
 
@@ -27,34 +26,32 @@ export default class Landing extends Component {
       images: [],
       isOpen: true,
       loading: true,
+      searchQuery: null,
     }
   }
 
+  // fetch on load
   componentDidMount() {
     fetch(url.unsplashUrl)
       .then(resp => resp.json())
       .then(data => {
-        console.log(data[4].urls.regular)
         this.setState({
           images: data,
+          loading: false
         })
       })
       .catch(error => console.log('Error during fetch!', error))
   }
-
-  componentDidUpdate(prevState) {
-    if (this.state.data !== prevState.data) {
-      this.performSearch();
-    }
-  }
-
-  performSearch = (query = 'dogs') => {
+  
+  // input search
+  performSearch = (query) => {
 		axios
 			.get(`https://api.unsplash.com/search/photos/?page=1&per_page=100&query=${query}&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS}`)
 			.then(data => {
 				this.setState({ 
           images: data.data.results, 
-          loading: false 
+          // searchQuery: true,
+          loading: false,
         });
 			})
 			.catch(err => {
@@ -62,22 +59,21 @@ export default class Landing extends Component {
 			});
 	};
 
+  componentDidUpdate(prevState) {
+    if (this.state.data !== prevState.data) {
+      this.performSearch();
+    }
+  }
+
   closeModal = () => {
     this.setState({
       isOpen: false
     });
   };
 
-   // tracks input for search bar
-   handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-  };
 
   // listener for enter key
-  keyDown = (e) => {
+  keyUp = (e) => {
     if (e.keyCode === 13) {
       this.performSearch();
     }
@@ -87,7 +83,7 @@ export default class Landing extends Component {
 
     return (
 
-      <div keyDown={(e) => this.keyDown(e)}>
+      <div keyDown={(e) => this.keyUp(e)}>
         <SignUp handleClose={this.closeModal} Open={this.state.isOpen} />
         <SearchBar onSearch={this.performSearch}/>
         {this.state.loading
@@ -98,3 +94,16 @@ export default class Landing extends Component {
     )
   }
 }
+
+document.addEventListener('scroll', function () {
+  let scrollTop = window.pageYOffset;
+  let windowHeight = window.innerHeight
+  let bodyHeight = document.body.scrollHeight - windowHeight;
+  let scrollPercentage = (scrollTop / bodyHeight);
+
+  // if the scroll is more than 90% from the top, load more content.
+  if (!this.loading && scrollPercentage > 0.9) {
+    this.loading = true;
+    // page++;
+  }
+});

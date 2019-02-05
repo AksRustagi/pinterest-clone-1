@@ -40,8 +40,28 @@
             height: 2.5rem;
             line-height: 20px;
             outline: none;
+            margin-right: 0.5rem;
             padding: 0 40px 0 52px;
             width: 100%;
+        }
+        .search-btn {
+            border: 0px;
+            display: inline-block;
+            border-radius: 4px;
+            -webkit-font-smoothing: antialiased;
+            padding: 0px 18px;
+            font-size: 16px;
+            font-weight: bold;
+            outline: none;
+            box-shadow: none;
+            cursor: pointer;
+            vertical-align: middle;
+            text-align: center;
+            letter-spacing: -.4px;
+            background-color: $mediumWell;
+            &:hover {
+                background-color: $primary;
+            }
         }
     }
 }

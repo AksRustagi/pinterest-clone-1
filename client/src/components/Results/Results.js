@@ -12,6 +12,7 @@ const Results = ({ data }) => {
             url={img.urls.small}
             user={img.user.links.html}
             name={img.user.name}
+            userPhoto={img.user.profile_image.small}
             link={img.links.html}
             key={img.id}
         />

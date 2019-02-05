@@ -4,11 +4,13 @@ import './search.scss';
 
 export default class SearchBar extends Component {
     state = {
-        searchText: ''
+        searchInput: '',
     };
 
     onSearchChange = e => {
-        this.setState({ searchInput: e.target.value });
+        this.setState({ 
+            searchInput: e.target.value 
+        });
     };
 
     handleSubmit = e => {
@@ -30,7 +32,7 @@ export default class SearchBar extends Component {
                         name="search"
                         placeholder="Search"
                     />
-                    <button type="submit" id="submit" className="search-button">
+                    <button type="submit" id="submit" className="search-btn">
                         Search
                     </button>
                 </form>
