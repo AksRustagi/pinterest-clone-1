@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as ROUTES from '../constants/Routes';
 import Landing from '../components/LandingPage/Landing.js';
 import SignUp from '../components/SignUp/SignUp.js';
-import Home from '../components/Home/Home.js';
 import { Spinner } from '@blueprintjs/core';
 import { app } from '../components/FireBase/Base.js';
 import './App.css';
@@ -75,7 +74,6 @@ class App extends Component {
           <Switch>
             <Route path={ROUTES.LANDING} exact component={Landing} />
             <Route path={ROUTES.SIGN_UP} exact component={SignUp} />
-            <Route path={ROUTES.HOME} exact component={Home} />
           </Switch>
         </div>
       </Router>

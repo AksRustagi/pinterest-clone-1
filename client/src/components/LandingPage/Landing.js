@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import SignUp from '../SignUp/SignUp.js';
 import url from '../../util/url.js'
 import Unsplash from 'unsplash-js';
-import Header from '../Header/Header.js';
+import SearchBar from '../Header/SearchBar.js';
+import Results from '../Results/Results.js';
 import './landing.scss';
 
 
@@ -23,7 +24,7 @@ export default class Landing extends Component {
 
 
     this.state = {
-      data: [],
+      images: [],
       isOpen: true,
       keyword: '',
       searched: false,
@@ -33,13 +34,13 @@ export default class Landing extends Component {
   componentDidMount() {
     fetch(url.unsplashUrl)
       .then(resp => resp.json())
-      .then(images => {
-        console.log(images)
+      .then(data => {
+        console.log(data[4].urls.regular)
         this.setState({
-          data: images,
+          images: data,
         })
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log('error during fetch!', error))
   }
 
   componentDidUpdate() {
@@ -82,10 +83,19 @@ export default class Landing extends Component {
   };
 
   render() {
+
+    const { data, keyword, searched } = this.state;
+
+    // const filtered = data.filter(items =>
+    //   items.keywords.toLowerCase().includes(keyword && keyword.toLowerCase())
+    // );
+
     return (
+
       <div keyDown={(e) => this.keyDown(e)}>
         <SignUp handleClose={this.closeModal} Open={this.state.isOpen} />
-        <Header handleChange={this.handleChange} handleSearch={this.handleSearch}/>
+        <SearchBar handleChange={this.handleChange} handleSearch={this.handleSearch}/>
+        <Results data={this.state.images} />
       </div>
     )
   }
