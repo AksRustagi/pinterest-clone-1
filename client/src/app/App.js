@@ -3,11 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as ROUTES from '../constants/Routes';
 import Landing from '../components/LandingPage/Landing.js';
 import SignUp from '../components/SignUp/SignUp.js';
-import { Spinner } from '@blueprintjs/core';
 import { app } from '../components/FireBase/Base.js';
 import './App.css';
-
-var firebase = require('firebase');
 
 class App extends Component {
 
@@ -60,14 +57,13 @@ class App extends Component {
   }
 
   render() {
-    // if (this.state.loading === true) {
-    //   return (
-    //     <div className='loader'>
-    //       <h3>Loading...</h3>
-    //       <Spinner />
-    //     </div>
-    //   )
-    // }
+    if (this.state.loading === true) {
+      return (
+        <div className='loader'>
+          <h3>Loading...</h3>
+        </div>
+      )
+    }
     return (
       <Router>
         <div className="App">

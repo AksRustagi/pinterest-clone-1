@@ -3,16 +3,9 @@ import axios from 'axios';
 
 import SignUp from '../SignUp/SignUp.js';
 import url from '../../util/url.js'
-import Unsplash from 'unsplash-js';
 import SearchBar from '../Search/SearchBar.js';
 import Results from '../Results/Results.js';
 import './landing.scss';
-
-
-const unsplash = new Unsplash({
-  applicationId: process.env.REACT_APP_UNSPLASH_ACCESS,
-  secret: process.env.REACT_APP_UNSPLASH_SECRET,
-});
 
 export default class Landing extends Component {
 
@@ -83,11 +76,11 @@ export default class Landing extends Component {
 
     return (
 
-      <div keyDown={(e) => this.keyUp(e)}>
+      <div keyUp={(e) => this.keyUp(e)}>
         <SignUp handleClose={this.closeModal} Open={this.state.isOpen} />
         <SearchBar onSearch={this.performSearch}/>
         {this.state.loading
-        ? <p>Loading...</p>
+        ? <h3>Loading...</h3>
         : <Results data={this.state.images} />
         }
       </div>
