@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PinLogo from '../../assets/pinterest.svg';
-import './header.scss';
+import './search.scss';
 
 export default class SearchBar extends Component {
     state = {
@@ -8,11 +8,12 @@ export default class SearchBar extends Component {
     };
 
     onSearchChange = e => {
-        this.setState({ searchText: e.target.value });
+        this.setState({ searchInput: e.target.value });
     };
 
     handleSubmit = e => {
         e.preventDefault();
+        this.props.onSearch(this.query.value);
         e.currentTarget.reset();
     };
 
@@ -25,6 +26,7 @@ export default class SearchBar extends Component {
                     <input
                         type="search"
                         onChange={this.onSearchChange}
+                        ref={input => (this.query = input)}
                         name="search"
                         placeholder="Search"
                     />
