@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import * as ROUTES from '../constants/Routes';
 import Landing from '../components/LandingPage/Landing.js';
 import SignUp from '../components/SignUp/SignUp.js';
@@ -70,6 +70,7 @@ class App extends Component {
           <Switch>
             <Route path={ROUTES.LANDING} exact component={Landing} />
             <Route path={ROUTES.SIGN_UP} exact component={SignUp} />
+            <Route path={'/'} render={() => <Redirect to={Landing} />} />
           </Switch>
         </div>
       </Router>
