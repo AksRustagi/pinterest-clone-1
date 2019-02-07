@@ -9,6 +9,6 @@ const app = firebase.initializeApp({
   messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID
 });
 
-const githubProvider = new firebase.auth.GithubAuthProvider( )
+const githubProvider = new firebase.auth.GithubAuthProvider()
 
 export { app, githubProvider }

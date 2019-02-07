@@ -11,7 +11,7 @@ export default class SignUp extends Component {
 
   constructor(props) {
     super(props);
-
+    
     this.authWithGithub = this.authWithGithub.bind(this);
     this.authWithEmailPassword = this.authWithEmailPassword.bind(this);
 
@@ -77,7 +77,7 @@ export default class SignUp extends Component {
         <div className='modal-layer' onClick={this.props.handleClose} style={modalLayer}></div>
         <div className="form-container" style={formModal}>
         <Toaster ref={(element) => { this.toaster= element }} />
-          <form>
+          <form ref={(form) => { this.loginForm = form }}>
             <img src={PinLogo} alt='pinterest logo' />
             <h1>Sign up to see more</h1>
             <h4>Access Pinterest's best ideas with a free account</h4>
@@ -117,7 +117,7 @@ export default class SignUp extends Component {
               <img src={Github} alt='github icon' />
               Log in with GitHub
             </button>
-            <button className='login-btn'>Log in</button>
+            {/* <button className='login-btn'>Log in</button> */}
           </form>
         </div>
       </div>

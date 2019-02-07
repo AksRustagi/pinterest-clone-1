@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import SignUp from '../SignUp/SignUp.js';
 import url from '../../util/url.js'
 import SearchBar from '../Search/SearchBar.js';
 import Results from '../Results/Results.js';
@@ -17,7 +16,6 @@ export default class Landing extends Component {
 
     this.state = {
       images: [],
-      isOpen: true,
       loading: true,
       searchQuery: null,
     }
@@ -58,12 +56,6 @@ export default class Landing extends Component {
     }
   }
 
-  closeModal = () => {
-    this.setState({
-      isOpen: false
-    });
-  };
-
 
   // listener for enter key
   keyUp = (e) => {
@@ -76,8 +68,7 @@ export default class Landing extends Component {
 
     return (
 
-      <div keyUp={(e) => this.keyUp(e)}>
-        <SignUp handleClose={this.closeModal} Open={this.state.isOpen} />
+      <div className='landing-container' keyUp={(e) => this.keyUp(e)}>
         <SearchBar onSearch={this.performSearch}/>
         {this.state.loading
         ? <h3>Loading...</h3>

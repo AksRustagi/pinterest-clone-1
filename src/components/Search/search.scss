@@ -13,9 +13,17 @@
         vertical-align: middle;
         width: 2.5rem;
     }
+    .login-btn {
+        @include header-btn();
+        height: 2.5rem;
+    }
+     .logout-btn {
+        @include header-btn();
+        height: 2.5rem;
+    }
     .search-container {
         display: flex;
-        width: 50%;
+        width: 52%;
         .visibility-hidden {
             border: 0;
             clip: rect(0 0 0 0);
@@ -45,23 +53,12 @@
             width: 100%;
         }
         .search-btn {
-            border: 0px;
-            display: inline-block;
-            border-radius: 4px;
-            -webkit-font-smoothing: antialiased;
-            padding: 0px 18px;
-            font-size: 16px;
-            font-weight: bold;
-            outline: none;
-            box-shadow: none;
-            cursor: pointer;
-            vertical-align: middle;
-            text-align: center;
-            letter-spacing: -.4px;
-            background-color: $mediumWell;
-            &:hover {
-                background-color: $primary;
-            }
+            @include header-btn();
         }
+    }
+    .controlls {
+        display: flex;
+        justify-content: space-evenly;
+        width: 30%;
     }
 }

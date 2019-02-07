@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { app } from '../components/FireBase/Base.js';
 import * as ROUTES from '../constants/Routes';
 import Landing from '../components/LandingPage/Landing.js';
 import SignUp from '../components/SignUp/SignUp.js';
-import { app } from '../components/FireBase/Base.js';
+import Logout from '../components/Logout/Logout.js';
 import './App.css';
 
 class App extends Component {
@@ -70,7 +71,8 @@ class App extends Component {
           <Switch>
             <Route path={ROUTES.LANDING} exact component={Landing} />
             <Route path={ROUTES.SIGN_UP} exact component={SignUp} />
-            <Route path={'/'} render={() => <Redirect to={Landing} />} />
+            <Route path={ROUTES.LOG_OUT} exact component={Logout} />
+            <Route path={'/'} render={() => <Redirect to={ROUTES.LANDING} />} />
           </Switch>
         </div>
       </Router>
