@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/pinterest-clone/static/js/runtime~main.76fe8af9.js"
   },
   {
-    "revision": "173c7dbfb10807fd5c1a",
-    "url": "/pinterest-clone/static/js/main.173c7dbf.chunk.js"
+    "revision": "dc658b5d3d9ad7ebb1ca",
+    "url": "/pinterest-clone/static/js/main.dc658b5d.chunk.js"
   },
   {
     "revision": "e78e6aaef8ac0169cba3",
     "url": "/pinterest-clone/static/js/1.e78e6aae.chunk.js"
   },
   {
-    "revision": "173c7dbfb10807fd5c1a",
-    "url": "/pinterest-clone/static/css/main.cdd11af5.chunk.css"
+    "revision": "dc658b5d3d9ad7ebb1ca",
+    "url": "/pinterest-clone/static/css/main.3cb45830.chunk.css"
   },
   {
-    "revision": "cd506c9ea11a8ddfb24d4af27ea5094c",
+    "revision": "428ffe696101699a66c86328b8ba3fd2",
     "url": "/pinterest-clone/index.html"
   }
 ];
