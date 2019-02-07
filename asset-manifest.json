@@ -1,15 +1,15 @@
 {
   "main.css": "/pinterest-clone/static/css/main.3cb45830.chunk.css",
-  "main.js": "/pinterest-clone/static/js/main.dc658b5d.chunk.js",
-  "main.js.map": "/pinterest-clone/static/js/main.dc658b5d.chunk.js.map",
-  "static/js/1.e78e6aae.chunk.js": "/pinterest-clone/static/js/1.e78e6aae.chunk.js",
-  "static/js/1.e78e6aae.chunk.js.map": "/pinterest-clone/static/js/1.e78e6aae.chunk.js.map",
+  "main.js": "/pinterest-clone/static/js/main.47d8eb6a.chunk.js",
+  "main.js.map": "/pinterest-clone/static/js/main.47d8eb6a.chunk.js.map",
+  "static/js/1.833b2da1.chunk.js": "/pinterest-clone/static/js/1.833b2da1.chunk.js",
+  "static/js/1.833b2da1.chunk.js.map": "/pinterest-clone/static/js/1.833b2da1.chunk.js.map",
   "runtime~main.js": "/pinterest-clone/static/js/runtime~main.76fe8af9.js",
   "runtime~main.js.map": "/pinterest-clone/static/js/runtime~main.76fe8af9.js.map",
   "static/css/main.3cb45830.chunk.css.map": "/pinterest-clone/static/css/main.3cb45830.chunk.css.map",
   "static/media/pinterest.svg": "/pinterest-clone/static/media/pinterest.6003b4e4.svg",
   "static/media/github-icon.svg": "/pinterest-clone/static/media/github-icon.a79d8bfd.svg",
   "index.html": "/pinterest-clone/index.html",
-  "precache-manifest.9f40dbd2d64eefa3bd5d53c84af0afeb.js": "/pinterest-clone/precache-manifest.9f40dbd2d64eefa3bd5d53c84af0afeb.js",
+  "precache-manifest.34ffaf4ccd2ea35cadc149c862829bda.js": "/pinterest-clone/precache-manifest.34ffaf4ccd2ea35cadc149c862829bda.js",
   "service-worker.js": "/pinterest-clone/service-worker.js"
 }
